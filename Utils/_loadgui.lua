@@ -10,6 +10,7 @@ end
 
 
 function load(data,currentGui)
+	local currentgui = nil
 	local parentMap = {}
 	for i, info in pairs(data) do
 		local index = info[1]
@@ -22,6 +23,11 @@ function load(data,currentGui)
 				item[property] = value
 			end
 		end
+		
+		if item:IsA'ScreenGui'  then
+			print(index)
+			currentgui = item
+		end
 
 		if properties.Parent then
 			item.Parent = parentMap[properties.Parent]
@@ -32,7 +38,8 @@ function load(data,currentGui)
 
 		parentMap[index] = item
 	end
-	return parentMap[1]
+	
+	return currentgui
 end
 
 function newgui(currentGui,data)
@@ -40,7 +47,7 @@ function newgui(currentGui,data)
 		if doesExist(currentGui , "IntroGui") then
 			currentGui.IntroGui:Destroy()
 		end
-		
+
 		if not doesExist(currentGui , "IntroGui") then		
 			load(data,currentGui)
 		end
