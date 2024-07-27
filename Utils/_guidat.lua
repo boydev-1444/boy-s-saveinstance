@@ -1,7 +1,7 @@
 --// enconded data
 local data = { 
 	{1,"ScreenGui", {DisplayOrder = 1000000000, Name = "IntroGui", ResetOnSpawn = false, IgnoreGuiInset = true}},
-	{2,"CanvasGroup", {Name = "Container", Parent = 1, BackgroundColor3 = Color3.fromRGB(20, 20, 20), AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5), Size = UDim2.fromScale(0.5, 0.5)}, GroupTransparency = 1},
+	{2,"Frame", {Name = "Container", Parent = 1, BackgroundColor3 = Color3.fromRGB(20, 20, 20), AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0.5, 0.5), Size = UDim2.fromScale(0.5, 0.5)}},
 	{3,"UIAspectRatioConstraint", {AspectRatio = 1.465, Parent = 2}},
 	{4,"UICorner", {CornerRadius = UDim.new(0, 5), Parent = 2}},
 	{5,"UIStroke", {ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual, Color = Color3.new(1, 1, 1), LineJoinMode = Enum.LineJoinMode.Round, Thickness = 2, Transparency = 0.9, Parent = 2}},
