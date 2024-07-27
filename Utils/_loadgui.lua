@@ -32,6 +32,7 @@ function load(data,currentGui)
 
 		parentMap[index] = item
 	end
+	return parentMap[1]
 end
 
 function newgui(currentGui,data)
