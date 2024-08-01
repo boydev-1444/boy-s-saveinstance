@@ -11,10 +11,18 @@ local function encode_string(str)
 	return table.concat(encoded)
 end
 
+local function remove_comments(lua_code)
+    lua_code = lua_code:gsub("%-%-.-\n", "\n")
+    lua_code = lua_code:gsub("%-%-%[%[.-%]%]", "")
+    return lua_code
+end
+
 local function DecompileMain(lua_code)
 	local var_count = 0
 	local var_map = {}
 
+	remove_comments(lua_code)
+	
 	lua_code = lua_code:gsub("([%a_][%w_]*)", function(var)
 		if not _G[var] and not var_map[var] then
 			var_map[var] = random_var_name(var_count)
