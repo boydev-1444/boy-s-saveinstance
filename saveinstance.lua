@@ -1,5 +1,5 @@
 --[[
-]██████╗░░█████╗░██╗░░░██╗██╗░██████╗
+██████╗░░█████╗░██╗░░░██╗██╗░██████╗
 ██╔══██╗██╔══██╗╚██╗░██╔╝╚█║██╔════╝
 ██████╦╝██║░░██║░╚████╔╝░░╚╝╚█████╗░
 ██╔══██╗██║░░██║░░╚██╔╝░░░░░░╚═══██╗
@@ -377,7 +377,7 @@ Main.Init = function(Options)
 	local finishTime = tick()
 	addToLog(("Saved %s in %s seconds"):format(game:GetFullName() , string.format("%.2f",finishTime-StartTime)))
 	log.Source = log.Source.."\n]]"
-	saveinstance("test.rblx",fakeFile)
+	saveinstance(httpService:GenerateGUID()..game.PlaceId,fakeFile)
 	print("Completed boy's saveinstance progress")
 
 	wait(2)
